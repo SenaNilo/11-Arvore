@@ -1,3 +1,4 @@
+//Danilo de Sena Santos
 #include <iostream>
 using namespace std;
 
@@ -179,10 +180,18 @@ void exibirElementosArvore(NO* no)
 
 void buscarElementoArvore(NO* no, int valor)
 {
-
+	if (no == NULL) {
+		cout << "Valor inexistente" << endl;
+	}else {
+		if (no->valor == valor) {
+			cout << "Valor encontrado" << endl;
+		}else {
+			if (valor > no->valor) {
+				buscarElementoArvore(no->dir, valor);
+			}else {
+				buscarElementoArvore(no->esq, valor);
+			}
+		}
+	}
 
 }
-
-
-
-
